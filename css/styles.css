@@ -115,6 +115,7 @@ header {
   margin-left: 50px;
 }
 .site-nav .link {
+  position: relative;
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
@@ -156,6 +157,18 @@ header {
   color: var(--accent-tex-color);
 }
 
+.current::after {
+  content: "";
+
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-tex-color);
+  border-radius: 2px;
+}
 /* __________________________________ герой ______________________________________________________________ */
 
 .hero {
@@ -260,6 +273,31 @@ header {
 .specialization .item:nth-child(3n) {
   margin-right: 0;
 }
+.specialization-thumb {
+  position: relative;
+}
+.specialization-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(47, 48, 58, 0.8);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  text-align: center;
+  text-transform: uppercase;
+
+  color: var(--primary-white-color);
+}
+.spec-overlay-text {
+  margin: 0;
+}
 /* __________________________секция наша команда___________________ */
 .team {
   display: flex;
@@ -280,8 +318,7 @@ header {
 }
 
 .team-text {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px 32px;
 }
 .team-title {
   margin-top: 0;
@@ -304,7 +341,6 @@ header {
 .team-icons {
   display: flex;
   justify-content: space-between;
-  margin: 0 32px;
 }
 
 .team-icon-link {
