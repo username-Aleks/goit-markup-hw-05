@@ -125,6 +125,8 @@ header {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contacts {
   display: flex;
@@ -142,6 +144,8 @@ header {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .icon-contact {
   margin-right: 10px;
@@ -352,6 +356,9 @@ header {
   color: var(--icons-color);
 
   border-radius: 50%;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-icon-link:hover,
 .team-icon-link:focus {
@@ -368,10 +375,14 @@ header {
 /* _____________________________секция клиенты компании_____________________ */
 .clients-list {
   display: flex;
-  justify-content: space-around;
 }
 .company-logo {
   color: var(--icons-color);
+  margin-right: 30px;
+}
+
+.company-logo:nth-child(6) {
+  margin-right: 0;
 }
 
 .company-logo-link {
@@ -383,6 +394,9 @@ header {
   width: 170px;
   height: 92px;
   color: var(--icons-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .company-logo-link:hover,
 .company-logo-link:focus {
@@ -418,11 +432,42 @@ header {
 }
 .project-link {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .project-link:hover,
 .project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.project-thumb {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-link:hover .project-thumb-text,
+.project-link:focus .project-thumb-text {
+  transform: translateY(0);
+}
+.project-thumb-text {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(101%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.thumb-text {
+  margin: 0;
+  color: var(--primary-white-color);
+  font-size: 18px;
+  line-height: 1.55;
 }
 
 .project-text {
@@ -490,6 +535,8 @@ header {
 
 .adress-contacts .link {
   color: rgba(255, 255, 255, 0.6);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-links {
   width: 206px;
@@ -520,6 +567,8 @@ header {
   color: var(--primary-white-color);
   background-color: rgba(255, 255, 255, 0.1);
 
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   border-radius: 50%;
 }
 .footer-icon-link:hover,
@@ -546,6 +595,10 @@ header {
   background-color: var(--secondary-background-color);
   color: var(--secondary-tex-color);
   cursor: pointer;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .active-btn,
 .button:hover,
@@ -554,7 +607,6 @@ header {
   color: var(--primary-white-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
 }
 .hero-button.button {
   padding: 10px 32px;
@@ -568,6 +620,8 @@ header {
   letter-spacing: 0.06em;
   background-color: var(--accent-tex-color);
   color: var(--primary-white-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-button.button:hover,
 .hero-button.button:focus {
@@ -582,11 +636,18 @@ header {
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.8);
 }
 
 .modal {
@@ -596,12 +657,14 @@ header {
 
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-modal-close {
